@@ -359,7 +359,7 @@ bandit27@bandit:/tmp/avikki27/repo$ cat README
 The password to the next level is: 0ef186ac70e04ea33b4c18xxxxxxxxxxx
 ```
 
-#### Level 27
+#### Level 28
 Again a repo, using commits to hide the password, I guess next will be branches
 
 ```s
