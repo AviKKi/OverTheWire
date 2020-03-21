@@ -302,3 +302,30 @@ Exiting.
 ```
 
 #### Level 25
+It required me to resize the window and press `v` to enter vim editor then i edited /etc/bandit_pass/bandit26 to look at the password. Had to google the breaking of more command, startup command can be checked by `$cat /etc/passwd | grep bandit26`
+```s
+bandit25@bandit:~$ ls
+bandit26.sshkey
+bandit25@bandit:~$ ssh -i bandit26.sshkey bandit26@localhost
+```
+
+#### Level 26
+
+Already inside level 26 with vim access don't know what to do now :/
+doing `:set shell=/bin/bash` and `:shell` finally worked out, I'm out on shell on the way to 27
+
+```s
+bandit26@bandit:~$ ls
+bandit27-do  text.txt
+bandit26@bandit:~$ cat text.txt 
+  _                     _ _ _   ___   __  
+ | |                   | (_) | |__ \ / /  
+ | |__   __ _ _ __   __| |_| |_   ) / /_  
+ | '_ \ / _` | '_ \ / _` | | __| / / '_ \ 
+ | |_) | (_| | | | | (_| | | |_ / /| (_) |
+ |_.__/ \__,_|_| |_|\__,_|_|\__|____\___/ 
+bandit26@bandit:~$ ./bandit27-do echo "grapes"
+grapes
+bandit26@bandit:~$ ./bandit27-do cat /etc/bandit_pass/bandit27
+3ba3118a22e93127a4edxxxxxxxxxx
+```
