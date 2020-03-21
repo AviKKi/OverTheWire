@@ -488,3 +488,13 @@ Some notes for bandit30 of bandit.
 bandit29@bandit:/tmp/avikki29/repo$ 
 
 ```
+
+#### Level 30
+Ok I didn't knew this one took a lot of hanging around and arrows in the dark
+It turns out git has a feature called tag.
+```s
+bandit30@bandit:/tmp/avikki30/repo$ git tag
+secret
+bandit30@bandit:/tmp/avikki30/repo$ git show secret 
+47e603bb428404d265f59c4292xxxxxx
+```
