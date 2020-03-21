@@ -498,3 +498,13 @@ secret
 bandit30@bandit:/tmp/avikki30/repo$ git show secret 
 47e603bb428404d265f59c4292xxxxxx
 ```
+
+
+#### Level 31
+
+This one was simpler just a bit tricky, `*.txt` was added in gitignore, so even if you added a txt forcefully it the git hook at backend would ignore your txt file.
+
+so in first commit remove `.gitignore`, then add `key.txt`
+then push it to get the password
+
+
