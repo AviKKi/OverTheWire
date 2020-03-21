@@ -508,3 +508,12 @@ so in first commit remove `.gitignore`, then add `key.txt`
 then push it to get the password
 
 
+#### Level 32
+Easier said than done, this one took a lot of brute forcing, I though I'll have to use some enviroment variable like $EDITOR but it was not set finally `$0` was the key
+```s
+>> $0
+$ ls
+uppershell
+$ cat /etc/bandit_pass/bandit33
+c9c3199ddf4121b10cf581a98dxxxxxx
+```
